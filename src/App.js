@@ -8,7 +8,7 @@ function App() {
   const [currency, setCurrency] = useState("");
   const [result, setResult] = useState("");
 
-  const calculateResult = (amount, currency) => currency === "" ? "" : setResult((amount * currency).toFixed(2))
+  const calculateResult = (amount, currency) => currency === "" ? "" : setResult((amount * currency).toFixed(2));
 
   return (
     <Container>
