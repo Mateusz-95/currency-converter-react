@@ -1,15 +1,10 @@
-import { useState } from "react";
-import {calculateResult} from "./App.js";
-
-
-const Result = () => {
-
-  const [result, setResult] = useState("");
+import "./style.css";
+const Result = ({ result }) => {
 
   return (
     <p>
       Wynik:
-      <strong>{result}</strong>
+      <span className="result">{result}</span>
       zł
     </p>
   )

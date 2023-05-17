@@ -1,8 +1,6 @@
-import { useState } from "react";
 import "./style.css";
 
-
-const Form = ({amount, currency}) => {
+const Form = ({ amount, setAmount, currency, setCurrency, calculateResult }) => {
 
   const options = [
     {
@@ -27,9 +25,6 @@ const Form = ({amount, currency}) => {
     calculateResult(amount, currency);
     setAmount("");
   };
-
-  const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState("");
 
   return (
     <form

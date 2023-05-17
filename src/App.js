@@ -1,16 +1,27 @@
+import React, { useState } from "react";
 import Container from "./Container";
 import Form from "./Form";
-import Result, {setResult} from "./Result";
+import Result from "./Result";
 
 function App() {
-  const calculateResult = setResult((amount, currency) => amount * currency);
+  const [amount, setAmount] = useState("");
+  const [currency, setCurrency] = useState("");
+  const [result, setResult] = useState("");
+
+  const calculateResult = (amount, currency) => currency === "" ? "" : setResult((amount * currency).toFixed(2))
 
   return (
     <Container>
       <Form
-      calculateResult={calculateResult}
+        amount={amount}
+        currency={currency}
+        setAmount={setAmount}
+        setCurrency={setCurrency}
+        calculateResult={calculateResult}
       />
-      <Result />
+      <Result
+        result={result}
+      />
     </Container>
   );
 }
