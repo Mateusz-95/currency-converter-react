@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Form = ({ amount, setAmount, currency, setCurrency, calculateResult }) => {
+const Form = ({ amount, setAmount, currency, setCurrency, calculateResult, clock }) => {
 
   const options = [
     {
@@ -35,7 +35,10 @@ const Form = ({ amount, setAmount, currency, setCurrency, calculateResult }) => 
         <legend className="form__legend">
           Kalkulator Walut
         </legend>
-        <p>
+        <div>
+          <div className="form__clockContainer">
+            <span className="form__clock">Dzisiaj jest {clock}</span>
+          </div>
           <label>
             <span className="form__labelText">
               Kwota w <select
@@ -63,7 +66,7 @@ const Form = ({ amount, setAmount, currency, setCurrency, calculateResult }) => 
               onChange={({ target }) => setAmount(target.value)}
             />
           </label>
-        </p>
+        </div>
         <p>
           <button className="form__button">Przelicz</button>
         </p>
