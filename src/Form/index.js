@@ -1,25 +1,14 @@
 import "./style.css";
+import { currencies } from "./currencies";
 
-const Form = ({ amount, setAmount, currency, setCurrency, calculateResult, clock }) => {
-
-  const options = [
-    {
-      name: "💶 Euro",
-      value: 4.5,
-      id: 1,
-    },
-    {
-      name: "💵 Dolar amerykański",
-      value: 4.14,
-      id: 2,
-    },
-    {
-      name: "💷 Funt",
-      value: 5.19,
-      id: 3,
-    },
-  ];
-
+const Form = ({
+  amount,
+  setAmount,
+  currency,
+  setCurrency,
+  calculateResult,
+  clock,
+}) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult(amount, currency);
@@ -27,39 +16,33 @@ const Form = ({ amount, setAmount, currency, setCurrency, calculateResult, clock
   };
 
   return (
-    <form
-      onSubmit={onFormSubmit}
-      className="form"
-    >
+    <form onSubmit={onFormSubmit} className="form">
       <fieldset className="form__fieldset">
-        <legend className="form__legend">
-          Kalkulator Walut
-        </legend>
+        <legend className="form__legend">Kalkulator Walut</legend>
         <div>
           <div className="form__clockContainer">
             <span className="form__clock">Dzisiaj jest {clock}</span>
           </div>
           <label>
             <span className="form__labelText">
-              Kwota w <select
+              Kwota w{" "}
+              <select
                 value={currency}
                 onChange={({ target }) => setCurrency(target.value)}
                 name="chooseCurrency"
               >
                 <option value="">Wybierz walutę</option>
-                {options.map(option =>
-                  <option
-                    key={option.id}
-                    value={option.value}
-                  >
+                {currencies.map((option) => (
+                  <option key={option.id} value={option.value}>
                     {option.name}
                   </option>
-                )}
+                ))}
               </select>
             </span>
             <input
               className="form__field"
-              required step="any"
+              required
+              step="any"
               type="number"
               min="0.1"
               value={amount}
@@ -72,7 +55,7 @@ const Form = ({ amount, setAmount, currency, setCurrency, calculateResult, clock
         </p>
       </fieldset>
     </form>
-  )
+  );
 };
 
 export default Form;
