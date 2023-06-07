@@ -9,9 +9,9 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   background-image: url("/public/share.png");
-  background-size: 50px ;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position-y: 50%;
 }
