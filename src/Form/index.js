@@ -15,13 +15,24 @@ const Form = ({
     setAmount("");
   };
 
+  const formatDate = (clock) => {
+    return `${clock.toLocaleDateString(undefined, {
+      month: "long",
+      weekday: "long",
+      day: "numeric",
+      year: "numeric",
+    })}, ${clock.toLocaleTimeString()}`;
+  };
+
   return (
     <form onSubmit={onFormSubmit} className="form">
       <fieldset className="form__fieldset">
         <legend className="form__legend">Kalkulator Walut</legend>
         <div>
           <div className="form__clockContainer">
-            <span className="form__clock">Dzisiaj jest {clock}</span>
+            <span className="form__clock">
+              Dzisiaj jest {formatDate(clock)}
+            </span>
           </div>
           <label>
             <span className="form__labelText">
