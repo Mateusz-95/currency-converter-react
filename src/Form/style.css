@@ -54,16 +54,3 @@
   border-radius: 5px;
   padding: 5px;
 }
-
-.form__clockContainer {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.form__clock {
-  margin: 5px;
-  font-family: "Lato", sans-serif;
-  font-family: "Roboto Mono", monospace;
-  color: #7d8185;
-  font-size: 80%;
-}

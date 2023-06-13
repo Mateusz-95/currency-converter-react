@@ -1,5 +1,6 @@
 import "./style.css";
 import { currencies } from "./currencies";
+import Clock from "../Clock";
 
 const Form = ({
   amount,
@@ -15,25 +16,12 @@ const Form = ({
     setAmount("");
   };
 
-  const formatDate = (clock) => {
-    return `${clock.toLocaleDateString(undefined, {
-      month: "long",
-      weekday: "long",
-      day: "numeric",
-      year: "numeric",
-    })}, ${clock.toLocaleTimeString()}`;
-  };
-
   return (
     <form onSubmit={onFormSubmit} className="form">
       <fieldset className="form__fieldset">
         <legend className="form__legend">Kalkulator Walut</legend>
         <div>
-          <div className="form__clockContainer">
-            <span className="form__clock">
-              Dzisiaj jest {formatDate(clock)}
-            </span>
-          </div>
+          <Clock />
           <label>
             <span className="form__labelText">
               Kwota w{" "}

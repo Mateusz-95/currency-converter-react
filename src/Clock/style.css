@@ -1,0 +1,12 @@
+.form__clockContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.form__clock {
+  margin: 5px;
+  font-family: "Lato", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  color: #08090a;
+  font-size: 80%;
+}
