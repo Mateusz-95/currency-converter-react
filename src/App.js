@@ -19,7 +19,7 @@ function App() {
     return () => {
       clearInterval(intervalId);
     };
-  }, [clock]);
+  }, []);
 
   return (
     <Container>
