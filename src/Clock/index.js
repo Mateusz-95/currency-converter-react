@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./style.css";
+import { ClockContainer, ClockView } from "./styled";
 
 const formatDate = (clock) => {
   return `${clock.toLocaleDateString(undefined, {
@@ -23,9 +23,9 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="form__clockContainer">
-      <span className="form__clock">Dzisiaj jest {formatDate(clock)}</span>
-    </div>
+    <ClockContainer>
+      <ClockView>Dzisiaj jest {formatDate(clock)}</ClockView>
+    </ClockContainer>
   );
 };
 
