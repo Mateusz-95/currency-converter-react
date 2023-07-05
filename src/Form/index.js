@@ -1,6 +1,6 @@
-import "./style.css";
 import { currencies } from "./currencies";
 import Clock from "../Clock";
+import { Button, Field, Fieldset, FormContent, Legend, Text } from "./styled";
 
 const Form = ({
   amount,
@@ -17,13 +17,13 @@ const Form = ({
   };
 
   return (
-    <form onSubmit={onFormSubmit} className="form">
-      <fieldset className="form__fieldset">
-        <legend className="form__legend">Kalkulator Walut</legend>
+    <FormContent onSubmit={onFormSubmit}>
+      <Fieldset>
+        <Legend>Kalkulator Walut</Legend>
         <div>
           <Clock />
           <label>
-            <span className="form__labelText">
+            <Text>
               Kwota w{" "}
               <select
                 value={currency}
@@ -37,9 +37,8 @@ const Form = ({
                   </option>
                 ))}
               </select>
-            </span>
-            <input
-              className="form__field"
+            </Text>
+            <Field
               required
               step="any"
               type="number"
@@ -50,10 +49,10 @@ const Form = ({
           </label>
         </div>
         <p>
-          <button className="form__button">Przelicz</button>
+          <Button>Przelicz</Button>
         </p>
-      </fieldset>
-    </form>
+      </Fieldset>
+    </FormContent>
   );
 };
 
