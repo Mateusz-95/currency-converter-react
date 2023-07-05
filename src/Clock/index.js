@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ClockContainer, ClockView } from "./styled";
+import { useCurrentDate } from "./useCurrentDate";
 
 const formatDate = (clock) => {
   return `${clock.toLocaleDateString(undefined, {
@@ -11,20 +12,11 @@ const formatDate = (clock) => {
 };
 
 const Clock = () => {
-  const [clock, setClock] = useState(new Date());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setClock(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+  const date = useCurrentDate();
 
   return (
     <ClockContainer>
-      <ClockView>Dzisiaj jest {formatDate(clock)}</ClockView>
+      <ClockView>Dzisiaj jest {formatDate(date)}</ClockView>
     </ClockContainer>
   );
 };
