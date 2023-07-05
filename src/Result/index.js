@@ -1,12 +1,12 @@
-import "./style.css";
+import { ResultContainer, ResultSpan } from "./styled";
 
 const Result = ({ result }) => {
   return (
-    <p className="resultContainer">
+    <ResultContainer>
       Wynik:
-      <span className="result">{` ${result} `}</span>
+      <ResultSpan>{` ${result} `}</ResultSpan>
       zł
-    </p>
+    </ResultContainer>
   );
 };
 
