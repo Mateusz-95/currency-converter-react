@@ -17,24 +17,11 @@ const Form = ({
 
   const actualRateData = ratesData.date;
 
-  const currencies = [
-    {
-      name: "💶 Euro",
-      value: ratesData.rates.EUR,
-      id: 1,
-    },
-    {
-      name: "💵 Dolar amerykański",
-      value: ratesData.rates.USD,
-      id: 2,
-    },
-    {
-      name: "💷 Funt",
-      value: ratesData.rates.GBP,
-      id: 3,
-    },
-  ];
-
+  const currencyOptions = Object.keys(ratesData.rates).map((currencyName) => (
+    <option key={currencyName} value={ratesData.rates[currencyName]}>
+      {currencyName}
+    </option>
+  ));
   return (
     <FormContent onSubmit={onFormSubmit}>
       <Fieldset>
@@ -50,11 +37,7 @@ const Form = ({
                 name="chooseCurrency"
               >
                 <option value="">Wybierz walutę</option>
-                {currencies.map((option) => (
-                  <option key={option.id} value={option.value}>
-                    {option.name}
-                  </option>
-                ))}
+                {currencyOptions}
               </select>
             </Text>
             <Field
