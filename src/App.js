@@ -3,6 +3,7 @@ import Container from "./Container";
 import Form from "./Form";
 import Result from "./Result";
 import axios from "axios";
+import Loading from "./Loading";
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -33,7 +34,11 @@ function App() {
     currency === "" ? "" : setResult((amount / currency).toFixed(2));
 
   if (isLoading) {
-    return <p>Ładowanie</p>;
+    return (
+      <Container>
+        <Loading></Loading>
+      </Container>
+    );
   }
 
   return (
