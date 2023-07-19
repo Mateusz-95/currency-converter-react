@@ -24,8 +24,9 @@ function App() {
           setIsLoading(false);
           console.log(ratesData);
         } catch (error) {
-          console.error(error);
+          setIsLoading(false);
           setIsError(true);
+          console.error(error);
         }
       };
       fetchRates();
@@ -38,7 +39,10 @@ function App() {
   if (isLoading) {
     return (
       <Container>
-        <Loading></Loading>
+        <Loading
+          contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku
+        Centralnego... 😎"
+        ></Loading>
       </Container>
     );
   }
@@ -46,7 +50,12 @@ function App() {
   if (isError) {
     return (
       <Container>
-        <Loading></Loading>
+        <Loading
+          errorContent
+          contentText="Hmmm... Coś poszło nie tak 🤯 Sprawdź, czy masz połączenie z internetem. </br>
+        Jeśli masz... to wygląda na to, ze to nasza wina. Moze spróbuj później? 🤪
+        "
+        ></Loading>
       </Container>
     );
   }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const LoadingDiv = styled.div`
   max-width: 100%;
@@ -16,4 +16,10 @@ export const Header = styled.h1`
 export const Content = styled.p`
   color: teal;
   text-align: center;
+
+  ${({ errorContent }) =>
+    errorContent &&
+    css`
+      color: red;
+    `}
 `;
