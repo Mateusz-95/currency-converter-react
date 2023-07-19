@@ -6,5 +6,7 @@ export const ResultSpan = styled.span`
 
 export const ResultContainer = styled.p`
   text-align: center;
-  background-color: #dfd3d3;
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 20%;
+  margin: auto;
 `;

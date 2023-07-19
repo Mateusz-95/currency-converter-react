@@ -11,6 +11,7 @@ function App() {
   const [result, setResult] = useState("");
   const [ratesData, setRatesData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       const fetchRates = async () => {
@@ -24,6 +25,7 @@ function App() {
           console.log(ratesData);
         } catch (error) {
           console.error(error);
+          setIsError(true);
         }
       };
       fetchRates();
@@ -34,6 +36,14 @@ function App() {
     currency === "" ? "" : setResult((amount / currency).toFixed(2));
 
   if (isLoading) {
+    return (
+      <Container>
+        <Loading></Loading>
+      </Container>
+    );
+  }
+
+  if (isError) {
     return (
       <Container>
         <Loading></Loading>

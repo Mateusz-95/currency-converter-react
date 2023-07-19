@@ -48,6 +48,7 @@ export const Fieldset = styled.fieldset`
   padding: 20px;
   border-radius: 5px;
   margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const Legend = styled.legend`
