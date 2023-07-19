@@ -44,6 +44,7 @@ function App() {
         setAmount={setAmount}
         setCurrency={setCurrency}
         calculateResult={calculateResult}
+        ratesData={ratesData}
       />
       <Result result={result} />
     </Container>

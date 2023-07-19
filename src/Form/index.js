@@ -8,13 +8,15 @@ const Form = ({
   currency,
   setCurrency,
   calculateResult,
-  clock,
+  ratesData,
 }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult(amount, currency);
     setAmount("");
   };
+
+  const actualRateData = ratesData.date;
 
   return (
     <FormContent onSubmit={onFormSubmit}>
@@ -52,7 +54,9 @@ const Form = ({
           <Button>Przelicz</Button>
         </p>
         <p>Kursy walut pobierane są z Narodowego Banku Centralnego.</p>
-        <p>Aktualne na dzień:</p>
+        <p>
+          Aktualne na dzień:<strong>{actualRateData}</strong>{" "}
+        </p>
       </Fieldset>
     </FormContent>
   );
