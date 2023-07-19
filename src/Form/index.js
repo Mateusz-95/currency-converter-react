@@ -1,4 +1,3 @@
-import { currencies } from "./currencies";
 import Clock from "../Clock";
 import { Button, Field, Fieldset, FormContent, Legend, Text } from "./styled";
 
@@ -17,6 +16,24 @@ const Form = ({
   };
 
   const actualRateData = ratesData.date;
+
+  const currencies = [
+    {
+      name: "💶 Euro",
+      value: ratesData.rates.EUR,
+      id: 1,
+    },
+    {
+      name: "💵 Dolar amerykański",
+      value: ratesData.rates.USD,
+      id: 2,
+    },
+    {
+      name: "💷 Funt",
+      value: ratesData.rates.GBP,
+      id: 3,
+    },
+  ];
 
   return (
     <FormContent onSubmit={onFormSubmit}>

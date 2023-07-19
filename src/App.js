@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   const calculateResult = (amount, currency) =>
-    currency === "" ? "" : setResult((amount * currency).toFixed(2));
+    currency === "" ? "" : setResult((amount / currency).toFixed(2));
 
   if (isLoading) {
     return <p>Ładowanie</p>;
