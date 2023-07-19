@@ -51,6 +51,8 @@ const Form = ({
         <p>
           <Button>Przelicz</Button>
         </p>
+        <p>Kursy walut pobierane są z Narodowego Banku Centralnego.</p>
+        <p>Aktualne na dzień:</p>
       </Fieldset>
     </FormContent>
   );
