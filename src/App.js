@@ -16,40 +16,46 @@ function App() {
 
   if (isLoading) {
     return (
-      <Container>
-        <Loading
-          contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku
+      <>
+        <Container>
+          <Loading
+            contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku
         Centralnego... 😎"
-        ></Loading>
-      </Container>
+          ></Loading>
+        </Container>
+      </>
     );
   }
 
   if (isError) {
     return (
-      <Container>
-        <Loading
-          errorContent
-          contentText="Hmmm... Coś poszło nie tak 🤯 Sprawdź, czy masz połączenie z internetem. </br>
+      <>
+        <Container>
+          <Loading
+            errorContent
+            contentText="Hmmm... Coś poszło nie tak 🤯 Sprawdź, czy masz połączenie z internetem. </br>
         Jeśli masz... to wygląda na to, ze to nasza wina. Moze spróbuj później? 🤪
         "
-        ></Loading>
-      </Container>
+          ></Loading>
+        </Container>
+      </>
     );
   }
 
   return (
-    <Container>
-      <Form
-        amount={amount}
-        currency={currency}
-        setAmount={setAmount}
-        setCurrency={setCurrency}
-        calculateResult={calculateResult}
-        ratesData={ratesData}
-      />
-      <Result result={result} />
-    </Container>
+    <>
+      <Container>
+        <Form
+          amount={amount}
+          currency={currency}
+          setAmount={setAmount}
+          setCurrency={setCurrency}
+          calculateResult={calculateResult}
+          ratesData={ratesData}
+        />
+        <Result result={result} />
+      </Container>
+    </>
   );
 }
 

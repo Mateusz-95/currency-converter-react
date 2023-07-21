@@ -15,7 +15,6 @@ export const Field = styled.input`
   padding: 3px;
   width: 200px;
   border-radius: 5px;
-  width: 100px;
   margin: 18px;
 
   &:hover {
