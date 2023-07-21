@@ -4,6 +4,34 @@ import Form from "./Form";
 import Result from "./Result";
 import Loading from "./Loading";
 import { useFetchData } from "./useFetchData";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+    background-image: url("/public/share.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 767px) {
+    body {
+      background-size: 100% 100vh;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
+`;
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -17,11 +45,9 @@ function App() {
   if (isLoading) {
     return (
       <>
+        <GlobalStyles />
         <Container>
-          <Loading
-            contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku
-        Centralnego... 😎"
-          ></Loading>
+          <Loading contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku Centralnego... 😎" />
         </Container>
       </>
     );
@@ -30,13 +56,13 @@ function App() {
   if (isError) {
     return (
       <>
+        <GlobalStyles />
         <Container>
           <Loading
             errorContent
             contentText="Hmmm... Coś poszło nie tak 🤯 Sprawdź, czy masz połączenie z internetem. </br>
-        Jeśli masz... to wygląda na to, ze to nasza wina. Moze spróbuj później? 🤪
-        "
-          ></Loading>
+          Jeśli masz... to wygląda na to, że to nasza wina. Może spróbuj później? 🤪"
+          />
         </Container>
       </>
     );
@@ -44,6 +70,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyles />
       <Container>
         <Form
           amount={amount}
