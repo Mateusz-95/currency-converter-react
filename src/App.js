@@ -5,6 +5,7 @@ import Result from "./Result";
 import Loading from "./Loading";
 import { useFetchData } from "./useFetchData";
 import { createGlobalStyle } from "styled-components";
+import background from "./share.png";
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -19,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: "Lato", sans-serif;
-    background-image: url("/public/share.png");
+    background-image: url(${background});
     background-size: cover;
     background-repeat: no-repeat;
   }
