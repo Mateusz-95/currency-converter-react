@@ -4,35 +4,6 @@ import Form from "./Form";
 import Result from "./Result";
 import Loading from "./Loading";
 import { useFetchData } from "./useFetchData";
-import { createGlobalStyle } from "styled-components";
-import background from "./share.png";
-
-const GlobalStyles = createGlobalStyle`
-  html {
-    box-sizing: border-box;
-  }
-
-  *,
-  ::before,
-  ::after {
-    box-sizing: inherit;
-  }
-
-  body {
-    font-family: "Lato", sans-serif;
-    background-image: url(${background});
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  @media (max-width: 767px) {
-    body {
-      background-size: 100% 100vh;
-      background-repeat: no-repeat;
-      background-position: top;
-    }
-  }
-`;
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -46,7 +17,6 @@ function App() {
   if (isLoading) {
     return (
       <>
-        <GlobalStyles />
         <ContentContainer>
           <Loading contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku Centralnego... 😎" />
         </ContentContainer>
@@ -57,7 +27,6 @@ function App() {
   if (isError) {
     return (
       <>
-        <GlobalStyles />
         <ContentContainer>
           <Loading
             errorContent
@@ -71,7 +40,6 @@ function App() {
 
   return (
     <>
-      <GlobalStyles />
       <ContentContainer>
         <Form
           amount={amount}
