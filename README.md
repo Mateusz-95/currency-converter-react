@@ -1,6 +1,6 @@
 ### Currency converter in React
 
-![currency-converter]https://github.com/Mateusz-95/currency-converter-react/blob/main/public/img/Zrzut%20ekranu%202023-07-22%20o%2011.24.11.png?raw=true
+![currency-converter](https://github.com/Mateusz-95/currency-converter-react/blob/main/public/img/Zrzut%20ekranu%202023-07-22%20o%2011.24.11.png?raw=true)
 
 This is a currency converter application that was originally built using vanilla JavaScript and has now been refactored to utilize the React library. It allows you to convert an amount from one currency to another.
 
