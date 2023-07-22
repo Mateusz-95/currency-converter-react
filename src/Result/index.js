@@ -3,7 +3,7 @@ import { ResultContainer, ResultSpan } from "./styled";
 const Result = ({ result }) => {
   return (
     <ResultContainer>
-      Wynik:
+      Wynik: <br />
       <ResultSpan>{` ${result} `}</ResultSpan>
       zł
     </ResultContainer>

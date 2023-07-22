@@ -31,7 +31,7 @@ export const Button = styled.button`
   border: none;
   background-color: teal;
   color: white;
-  padding: 5px;
+  padding: 15px;
   border-radius: 5px;
 
   &:hover {
