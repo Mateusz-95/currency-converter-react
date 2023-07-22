@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "./Container";
+import { ContentContainer } from "./Container/styled";
 import Form from "./Form";
 import Result from "./Result";
 import Loading from "./Loading";
@@ -47,9 +47,9 @@ function App() {
     return (
       <>
         <GlobalStyles />
-        <Container>
+        <ContentContainer>
           <Loading contentText="Sekundka... <br></br> Ładuję kursy walut z Europejskiego Banku Centralnego... 😎" />
-        </Container>
+        </ContentContainer>
       </>
     );
   }
@@ -58,13 +58,13 @@ function App() {
     return (
       <>
         <GlobalStyles />
-        <Container>
+        <ContentContainer>
           <Loading
             errorContent
             contentText="Hmmm... Coś poszło nie tak 🤯 Sprawdź, czy masz połączenie z internetem. </br>
           Jeśli masz... to wygląda na to, że to nasza wina. Może spróbuj później? 🤪"
           />
-        </Container>
+        </ContentContainer>
       </>
     );
   }
@@ -72,7 +72,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Container>
+      <ContentContainer>
         <Form
           amount={amount}
           currency={currency}
@@ -82,7 +82,7 @@ function App() {
           ratesData={ratesData}
         />
         <Result result={result} />
-      </Container>
+      </ContentContainer>
     </>
   );
 }
