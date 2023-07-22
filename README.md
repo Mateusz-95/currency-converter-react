@@ -1,14 +1,14 @@
-## Currency converter in React
+### Currency converter in React
 
 ![currency-converter](https://raw.githubusercontent.com/Mateusz-95/currency-converter-/main/images/currency-converter%20screen.png)
 
 This is a currency converter application that was originally built using vanilla JavaScript and has now been refactored to utilize the React library. It allows you to convert an amount from one currency to another.
 
-## Background
+### Background
 
 This project is a migration of a previous currency converter application implemented in vanilla JavaScript. The migration was done to leverage the benefits of React, such as component-based architecture, virtual DOM, and state management.
 
-## Features
+### Features
 
 - **React Components**: The application is structured into reusable components such as `Form`, `Result`, and `Container`, allowing for better code organization and modularity.
 
@@ -20,7 +20,7 @@ This project is a migration of a previous currency converter application impleme
 
 - **Calculation Logic**: The `calculateResult` function in the `App` component performs the currency conversion calculation based on the entered amount and selected currency. It uses a conditional check to handle the case when no currency is selected, preventing invalid calculations.
 
-# Demo 
+### Demo 
 https://mateusz-95.github.io/currency-converter-react/
 
 ## Available Scripts
